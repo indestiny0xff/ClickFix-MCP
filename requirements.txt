@@ -1,0 +1,5 @@
+mcp[cli]>=1.2.0
+httpx
+selenium>=4.15.0
+Pillow>=10.0.0
+virtualbox>=2.1.0

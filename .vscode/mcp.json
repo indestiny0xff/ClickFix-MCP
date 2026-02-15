@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "mcp-docker-gateway": {
+      "command": "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "//var/run/docker.sock:/var/run/docker.sock",
+        "-v",
+        "C:/Users/othma/.docker/mcp:/mcp",
+        "docker/mcp-gateway",
+        "--catalog=/mcp/catalogs/docker-mcp.yaml",
+        "--catalog=/mcp/catalogs/custom.yaml",
+        "--config=/mcp/config.yaml",
+        "--registry=/mcp/registry.yaml",
+        "--tools-config=/mcp/tools.yaml",
+        "--transport=stdio"
+      ],
+      "env": {
+        "PATH": "C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Windows\\System32"
+      }
+    },
+    "mcp-docker-legacy": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run"
+      ],
+      "env": {
+        "LOCALAPPDATA": "C:\\Users\\othma\\AppData\\Local",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files"
+      }
+    },
+    "clickfix": {
+      "command": "C:\\Users\\othma\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "args": [
+        "C:\\Users\\othma\\Desktop\\Code\\clickfix-mcp-server\\clickfix_server.py"
+      ],
+      "env": {
+        "CLICKFIX_VM_NAME": "ClickFixVM",
+        "CLICKFIX_SNAPSHOT": "clean",
+        "CLICKFIX_VM_USER": "user",
+        "CLICKFIX_VM_PASS": "password",
+        "CLICKFIX_OUTPUT_DIR": "C:\\Users\\othma\\Desktop\\Code\\clickfix-mcp-server\\output",
+        "VBOXMANAGE_PATH": "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe"
+      }
+    }
+  },
+  "preferences": {
+    "coworkScheduledTasksEnabled": false,
+    "sidebarMode": "chat"
+  }
+}
