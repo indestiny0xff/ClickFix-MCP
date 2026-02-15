@@ -1,1 +1,0 @@
-# ClickFix-MCP
